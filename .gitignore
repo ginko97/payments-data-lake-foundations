@@ -28,3 +28,6 @@ data/silver/*
 .vscode/
 .idea/
 
+# VS Code workspace files (local only)
+*.code-workspace
+*.code-workspace
