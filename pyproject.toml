@@ -1,9 +1,26 @@
 [project]
 name = "payments-data-lake-foundations"
 version = "0.1.0"
-description = "Add your description here"
-readme = "README.md"
-requires-python = ">=3.13"
-dependencies = []
+description = "Week 1-2 Fintech Payments Data Lake"
+requires-python = ">=3.11"
+dependencies = [
+    "pandas",
+    "pyarrow",
+    "pydantic-settings",
+    "python-dotenv",
+    "structlog",
+    "numpy",
+]
+
+# Make scripts work cleanly
+[project.scripts]
 generate-payments = "src.ingestion.generate_data:main"
-run-transform = "src.transform.bronze_to_silver:main"
+transform-silver = "src.transform.bronze_to_silver:main"
+
+# Fix the warning
+[tool.uv]
+package = true
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["*"]
