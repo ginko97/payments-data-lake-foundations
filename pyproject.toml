@@ -24,3 +24,9 @@ package = true
 [tool.setuptools.packages.find]
 where = ["src"]
 include = ["*"]
+
+[dependency-groups]
+dev = [
+    "duckdb>=1.5.2",
+    "jupyter>=1.1.1",
+]
